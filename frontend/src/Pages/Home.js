@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import "../Pages/Home.css";
 
 import CarouselComponent from "../Components/CarouselComponent";
+import Category from "../Components/Category";
 // import Product from "../Pages/Product"
 
 
@@ -13,7 +14,9 @@ function Home() {
     <div>
     
     <Header/>
+
     <CarouselComponent/>
+    <Category/>
 
       {/* <div className="home__container">
         <img
