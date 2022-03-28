@@ -9,6 +9,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Footer from "./Footer";
 
 const Products = () => {
   const history = useHistory();
@@ -87,6 +88,7 @@ const Products = () => {
           </Grid>
         </Grid>
       </div>
+      <Footer />
     </>
   );
 };
