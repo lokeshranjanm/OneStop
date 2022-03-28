@@ -1,7 +1,8 @@
-import { TextField } from "@material-ui/core";
+import { TextField } from "@mui/material";
 import React from "react";
-import "./Register.css";
+import "./styles/Register.css";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -12,15 +13,14 @@ function Register() {
         required
         id="outlined-required"
         label="Username"
-        
-        style={{ marginTop: 20, width: 500 }}
+        style={{ marginTop: 40, width: 500 }}
       />
 
       <TextField
         required
         id="outlined-required"
         label="Email Address"
-        style={{ marginTop: 20, width: 500 }}
+        style={{ marginTop: 30, width: 500 }}
       />
 
       <TextField
@@ -45,6 +45,12 @@ function Register() {
       >
         Register
       </Button>
+      <span style={{ marginTop: 20 }}>
+        Already at OneStop?{" "}
+        <Link to={"/signin"} style={{ textDecoration: "none" }}>
+          Sign In
+        </Link>
+      </span>
     </div>
   );
 }

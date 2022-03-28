@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
-import { Typography } from "@mui/material";
-import "./Category.css";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import "./styles/Category.css";
 import ProductCard from "./ProductCard";
 
 const categories = [

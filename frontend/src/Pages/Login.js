@@ -1,7 +1,7 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
+import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
-import "./Login.css"
+import "./styles/Login.css";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -12,9 +12,7 @@ const Login = () => {
         required
         id="outlined-required"
         label="Email Address"
-       
-        style={{marginTop:20,width:500}}
-
+        style={{ marginTop: 20, width: 500 }}
       />
 
       <TextField
@@ -22,11 +20,21 @@ const Login = () => {
         label="Password"
         type="password"
         autoComplete="current-password"
-        style={{marginTop:30,width:500}}
-        
+        style={{ marginTop: 30, width: 500 }}
       />
-      <Button variant="contained" style={{marginTop:50,width:300}} size="large">LogIn</Button>
-      <span style={{marginTop:20}}>Not at OneStop? <Link style={{textDecoration: "none"}}>Sign Up</Link></span>
+      <Button
+        variant="contained"
+        style={{ marginTop: 50, width: 300 }}
+        size="large"
+      >
+        LogIn
+      </Button>
+      <span style={{ marginTop: 20 }}>
+        Not at OneStop?{" "}
+        <Link to={"/signup"} style={{ textDecoration: "none" }}>
+          Sign Up
+        </Link>
+      </span>
     </div>
   );
 };

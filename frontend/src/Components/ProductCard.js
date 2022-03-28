@@ -30,7 +30,7 @@ const ProductCard = () => {
           marginTop: 5,
         }}
       >
-        Lives
+        Roadster
       </Typography>
       <Typography style={{ fontSize: "14px", color: "grey", marginTop: 6 }}>
         Printed A-Line Kurta
