@@ -44,6 +44,18 @@ function TopProducts() {
         <Grid item xs={6} sm={4} md={4} lg={3}>
           <ProductCard />
         </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={3}>
+          <ProductCard />
+        </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={3}>
+          <ProductCard />
+        </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={3}>
+          <ProductCard />
+        </Grid>
+        <Grid item xs={6} sm={4} md={4} lg={3}>
+          <ProductCard />
+        </Grid>
       </Grid>
     </div>
   );
