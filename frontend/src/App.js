@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Products from "./Pages/Products";
+import ProductDetails from "./Pages/ProductDetails";
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
           </Route>
           <Route exact path="/products/:category">
             <Products />
+          </Route>
+          <Route exact path="/product-details">
+            <ProductDetails />
           </Route>
         </Switch>
       </Router>

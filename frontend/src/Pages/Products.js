@@ -26,7 +26,7 @@ const Products = () => {
       <div style={{ padding: "0px 20px" }}>
         <div
           style={{
-            marginTop: 40,
+            marginTop: 30,
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-start",
@@ -55,7 +55,7 @@ const Products = () => {
                 id="demo-simple-select"
                 value={sortby}
                 label="Sort By"
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               >
                 <MenuItem value={"recommended"}>Recommended</MenuItem>
                 <MenuItem value={"lowtogigh"}>Price Low to High</MenuItem>
