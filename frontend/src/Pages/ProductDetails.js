@@ -79,13 +79,12 @@ const ProductDetails = () => {
                   <RemoveIcon color="primary" />
                 </Button>
               </ButtonGroup>
-
               <Button
                 size="large"
                 style={{ width: "250px" }}
                 variant="contained"
               >
-                Buy Now
+                Proceed To BAG
               </Button>
             </div>
           </Grid>

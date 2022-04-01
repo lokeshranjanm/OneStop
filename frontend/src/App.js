@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Products from "./Pages/Products";
 import ProductDetails from "./Pages/ProductDetails";
+import Checkout from "./Pages/Checkout";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
           </Route>
           <Route exact path="/product-details">
             <ProductDetails />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </Router>
