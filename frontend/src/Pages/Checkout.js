@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import BagItems from "../Components/BagItems";
+import AddressForm from "./AddressForm";
 
 const Checkout = () => {
   const history = useHistory();
@@ -45,7 +46,7 @@ const Checkout = () => {
             </Typography>
             <BagItems />
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={6}></Grid>
+          <Grid item xs={12} sm={12} md={6} lg={6}> <AddressForm/> </Grid>
         </Grid>
       </div>
     </>

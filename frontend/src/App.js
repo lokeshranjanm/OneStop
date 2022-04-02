@@ -6,6 +6,7 @@ import Register from "./Pages/Register";
 import Products from "./Pages/Products";
 import ProductDetails from "./Pages/ProductDetails";
 import Checkout from "./Pages/Checkout";
+import AddressForm from "./Pages/AddressForm";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
           </Route>
           <Route exact path="/checkout">
             <Checkout />
+          </Route>
+          <Route exact path="/addressform">
+            <AddressForm />
           </Route>
         </Switch>
       </Router>
