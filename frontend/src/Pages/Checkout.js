@@ -15,6 +15,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import BagItems from "../Components/BagItems";
 import AddressForm from "./AddressForm";
 import AddressCard from "../Components/AddressCard";
+import BillDetails from "../Components/BillDetails";
 
 const Checkout = () => {
   const history = useHistory();
@@ -50,10 +51,14 @@ const Checkout = () => {
               <div style={{ marginTop: 40 }}>
                 <AddressCard />
               </div>
+              <div style={{ marginTop: 40 }}>
+                <BillDetails />
+              </div>
             </Grid>
           </Grid>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

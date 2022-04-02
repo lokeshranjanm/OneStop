@@ -90,6 +90,7 @@ const ProductDetails = () => {
           </Grid>
         </Grid>
       </div>
+      <Footer />
     </>
   );
 };
