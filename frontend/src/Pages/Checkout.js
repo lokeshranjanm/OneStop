@@ -14,6 +14,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import BagItems from "../Components/BagItems";
 import AddressForm from "./AddressForm";
+import AddressCard from "../Components/AddressCard";
 
 const Checkout = () => {
   const history = useHistory();
@@ -30,24 +31,28 @@ const Checkout = () => {
         >
           #Checkout
         </h3>
-        <Grid
-          container
-          spacing={2}
+        <div
           style={{
-            marginTop: "20px",
-            padding: "0px 40px",
+            marginTop: "40px",
+            padding: "0px 20px",
           }}
         >
-          <Grid item xs={12} sm={12} md={6} lg={6}>
-            <Typography
-              style={{ fontSize: "16px", fontWeight: 600, marginBottom: 15 }}
-            >
-              Shopping Bag (6 items)
-            </Typography>
-            <BagItems />
+          <Grid container spacing={8}>
+            <Grid item xs={12} sm={12} md={6} lg={7}>
+              <Typography
+                style={{ fontSize: "16px", fontWeight: 600, marginBottom: 15 }}
+              >
+                Shopping Bag (6 items)
+              </Typography>
+              <BagItems />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={5}>
+              <div style={{ marginTop: 40 }}>
+                <AddressCard />
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={6}> <AddressForm/> </Grid>
-        </Grid>
+        </div>
       </div>
     </>
   );
