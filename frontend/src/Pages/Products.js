@@ -75,16 +75,16 @@ const Products = () => {
         </h3>
         <Grid container spacing={10} style={{ padding: "0px 10px" }}>
           <Grid item xs={6} sm={4} md={4} lg={3}>
-            <ProductCard />
+            <ProductCard url="https://res.cloudinary.com/dl1jkiqif/image/upload/v1649010357/jzdkpqn6brnhwttkxjbo_q7dj2h.jpg" />
           </Grid>
           <Grid item xs={6} sm={4} md={4} lg={3}>
-            <ProductCard />
+            <ProductCard url="https://res.cloudinary.com/dl1jkiqif/image/upload/v1649010357/jzdkpqn6brnhwttkxjbo_q7dj2h.jpg" />
           </Grid>
           <Grid item xs={6} sm={4} md={4} lg={3}>
-            <ProductCard />
+            <ProductCard url="https://res.cloudinary.com/dl1jkiqif/image/upload/v1649010357/jzdkpqn6brnhwttkxjbo_q7dj2h.jpg" />
           </Grid>
           <Grid item xs={6} sm={4} md={4} lg={3}>
-            <ProductCard />
+            <ProductCard url="https://res.cloudinary.com/dl1jkiqif/image/upload/v1649010357/jzdkpqn6brnhwttkxjbo_q7dj2h.jpg" />
           </Grid>
         </Grid>
       </div>

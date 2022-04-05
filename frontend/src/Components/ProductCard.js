@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ url }) => {
   return (
     <div
       style={{
@@ -11,17 +11,21 @@ const ProductCard = () => {
         justifyContent: "flex-start",
       }}
     >
-      <Link to="">
-        <img
-          src="https://res.cloudinary.com/drzudfgzl/image/upload/v1596103469/ys00seex0dggkdsy0gqx.jpg"
-          // className="thumbnail"
-          alt=""
-          style={{
-            height: "100%",
-            width: "100%",
-          }}
-        />
-      </Link>
+      {" "}
+      <div style={{ border: "1px solid #E6E6E6", height: 247 }}>
+        <Link to="">
+          <img
+            src={url}
+            // className="thumbnail"
+            alt=""
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Link>
+      </div>
       <Typography
         style={{
           color: "black",
