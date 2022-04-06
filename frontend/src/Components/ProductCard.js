@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ url }) => {
+const ProductCard = ({ product }) => {
   return (
     <div
       style={{
@@ -22,7 +22,7 @@ const ProductCard = ({ url }) => {
       >
         <Link to="">
           <img
-            src={url}
+            src={product.url}
             // className="thumbnail"
             alt=""
             style={{
@@ -41,15 +41,15 @@ const ProductCard = ({ url }) => {
           marginTop: 5,
         }}
       >
-        Roadster
+        {product.productName}
       </Typography>
       <Typography style={{ fontSize: "14px", color: "grey", marginTop: 6 }}>
-        Half Sleeve Men's T-Shirt
+        {product.productDesc}
       </Typography>
       <Typography
         style={{ fontSize: "16px", fontWeight: "bold", marginTop: 10 }}
       >
-        ₹500
+        ₹{product.productPrice}
       </Typography>
     </div>
   );

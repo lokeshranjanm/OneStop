@@ -6,9 +6,12 @@ import { Link, useHistory } from "react-router-dom";
 import { Avatar } from "@material-ui/core";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { Badge } from "@material-ui/core";
+import Avatar1 from "@mui/material/Avatar";
 
-function Header() {
+const Header = () => {
   const history = useHistory();
+  const customer = JSON.parse(localStorage.getItem("customer"));
+
   return (
     <div className="header">
       <Link className="logo" to="/">
@@ -56,20 +59,47 @@ function Header() {
       </div>
 
       <div className="header__nav2">
-        <div
-          style={{ marginRight: 20 }}
-          className="header__option"
-          onClick={() => history.push("/signin")}
-        >
-          <Avatar
-            sizes="small"
-            style={{
-              width: 25,
-              height: 25,
-              color: "black",
-            }}
-          />
-          <span className="header__optionLineTwo">Sign In</span>
+        <div style={{ marginRight: 20 }} className="header__option">
+          {!customer ? (
+            <>
+              <Avatar
+                sizes="small"
+                style={{
+                  width: 25,
+                  height: 25,
+                  color: "black",
+                }}
+              />
+              <span
+                className="header__optionLineTwo"
+                onClick={() => history.push("/signin")}
+              >
+                Sign In
+              </span>
+            </>
+          ) : (
+            <>
+              <Avatar1
+                sizes="small"
+                style={{
+                  width: 25,
+                  height: 25,
+                }}
+                sx={{ bgcolor: "#2196f3" }}
+              >
+                {customer.username.charAt(0)}
+              </Avatar1>
+              <span
+                className="header__optionLineTwo"
+                onClick={() => {
+                  localStorage.removeItem("customer");
+                  // history.push("/signin");
+                }}
+              >
+                Sign Out
+              </span>
+            </>
+          )}
         </div>
 
         <div className="header__option">
@@ -81,6 +111,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
