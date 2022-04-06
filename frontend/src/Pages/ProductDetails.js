@@ -68,7 +68,7 @@ const ProductDetails = () => {
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <div style={{ textAlign: "center" }}>
                 <img
-                  src="https://res.cloudinary.com/drzudfgzl/image/upload/v1596103469/ys00seex0dggkdsy0gqx.jpg"
+                  src={product.url}
                   style={{ height: "500px", objectFit: "contain" }}
                 />
               </div>
@@ -81,7 +81,7 @@ const ProductDetails = () => {
                     fontWeight: 600,
                   }}
                 >
-                  Roadster
+                  {product.productName}
                 </Typography>
                 <Typography
                   style={{
@@ -89,7 +89,7 @@ const ProductDetails = () => {
                     fontWeight: 400,
                   }}
                 >
-                  Half Sleeve Men's T-Shirt
+                  {product.productDesc}
                 </Typography>
               </div>
               <Divider style={{ marginTop: "20px" }} />
@@ -100,7 +100,7 @@ const ProductDetails = () => {
                   marginTop: "20px",
                 }}
               >
-                ₹ 500
+                ₹ {product.producPrice}
               </Typography>
               <div style={{ marginTop: "50px", display: "flex" }}>
                 <ButtonGroup
