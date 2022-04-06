@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           height: 250,
         }}
       >
-        <Link to="">
+        <Link to={`/product-details/${product.productId}`}>
           <img
             src={product.url}
             // className="thumbnail"
