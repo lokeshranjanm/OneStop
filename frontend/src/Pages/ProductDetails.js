@@ -25,12 +25,14 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
+    setLoader(true);
     getProduct();
   }, []);
 
   const getProduct = async () => {
-    setLoader(true);
-    const response = await axios
+    console.log("basant Janghel");
+
+    await axios
       .get(`http://localhost:7777/product/get/${params.productId}`, {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
@@ -51,7 +53,7 @@ const ProductDetails = () => {
   return (
     <>
       <Header />
-      {loader ? (
+      {loader || !product ? (
         <div
           style={{
             position: "fixed",
@@ -60,7 +62,7 @@ const ProductDetails = () => {
             zIndex: "900",
           }}
         >
-          <CircularProgress color="secondary" />
+          <CircularProgress color="primary" />
         </div>
       ) : (
         <div style={{ padding: "40px 20px" }}>
