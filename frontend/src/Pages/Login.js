@@ -78,7 +78,7 @@ const Login = () => {
       };
 
       axios
-        .post(`http://localhost:7777/users/login`, payload, {
+        .post(`http://localhost:7777/users/login1`, payload, {
           headers: {
             "X-Requested-With": "XMLHttpRequest",
           },
@@ -87,7 +87,7 @@ const Login = () => {
           console.log("login", response);
           if (response.status === 200) {
             window.alert("You are login successfully");
-            localStorage.setItem("customer", response.data);
+            localStorage.setItem("customer", JSON.stringify(response.data));
             history.push("/");
           } else if (response.status === 500) {
             window.alert("Invaild credentials");
