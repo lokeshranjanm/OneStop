@@ -125,10 +125,10 @@ const Register = () => {
 
       axios
         .post(
-          `https://localhost:7777/users/register`,
-          {
+          `http://localhost:7777/users/register`,
+          
             payload,
-          },
+          
           {
             headers: {
               "X-Requested-With": "XMLHttpRequest",
@@ -136,10 +136,11 @@ const Register = () => {
           }
         )
         .then((response) => {
-          if (response === "SUCCESS") {
+          console.log(response)
+          if (response.data === "SUCCESS") {
             window.alert("You are resgister successfully");
             history.push("/signin");
-          } else if (response === "USER_ALREADY_EXISTS") {
+          } else if (response.data === "USER_ALREADY_EXISTS") {
             window.alert("You are resgister successfully");
           }
         })

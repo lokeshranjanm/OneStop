@@ -37,7 +37,7 @@ const ProductCard = ({ url }) => {
         Roadster
       </Typography>
       <Typography style={{ fontSize: "14px", color: "grey", marginTop: 6 }}>
-        Printed A-Line Kurta
+      Half Sleeve Men's T-Shirt
       </Typography>
       <Typography
         style={{ fontSize: "16px", fontWeight: "bold", marginTop: 10 }}

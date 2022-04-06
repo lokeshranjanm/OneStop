@@ -73,15 +73,15 @@ const AddressCard = () => {
             <Typography
               style={{ fontSize: "15px", fontWeight: 530, marginBottom: 6 }}
             >
-              Basant Janghel
+              Lokesh Ranjan
             </Typography>
             <Typography style={{ fontSize: "12px", fontWeight: 400 }}>
-              9009720615
+              8839786078
             </Typography>
             <Typography
               style={{ fontSize: "12px", fontWeight: 400, marginBottom: 6 }}
             >
-              33 A, Ward No 2, Loadhi Para Bharda Lodhi
+              33 A, Ward No 21, Baloda Bazar
             </Typography>
           </div>
         )}

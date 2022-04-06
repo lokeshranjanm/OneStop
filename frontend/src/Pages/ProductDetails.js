@@ -48,8 +48,7 @@ const ProductDetails = () => {
                   fontWeight: 400,
                 }}
               >
-                Women Mustard Yellow Yoke Design Foil Printed Kurta with
-                Trousers & Dupatta
+                Half Sleeve Men's T-Shirt
               </Typography>
             </div>
             <Divider style={{ marginTop: "20px" }} />
