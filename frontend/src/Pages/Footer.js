@@ -11,8 +11,7 @@ const Footer = () => {
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        position: "absolute",
-        bottom: 0,
+      
         width: "100%",
       }}
     >

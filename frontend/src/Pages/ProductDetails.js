@@ -64,7 +64,7 @@ const ProductDetails = () => {
         >
           <CircularProgress color="primary" />
         </div>
-      ) : (
+      ) : (<>
         <div style={{ padding: "40px 20px" }}>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -102,7 +102,7 @@ const ProductDetails = () => {
                   marginTop: "20px",
                 }}
               >
-                ₹ {product.producPrice}
+                ₹ {product.productPrice}
               </Typography>
               <div style={{ marginTop: "50px", display: "flex" }}>
                 <ButtonGroup
@@ -131,9 +131,13 @@ const ProductDetails = () => {
               </div>
             </Grid>
           </Grid>
+          
         </div>
+        <Footer />
+        </>
+
       )}
-      <Footer />
+      
     </>
   );
 };

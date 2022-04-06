@@ -93,7 +93,7 @@ const Header = () => {
                 className="header__optionLineTwo"
                 onClick={() => {
                   localStorage.removeItem("customer");
-                  // history.push("/signin");
+                  history.push("/signin");
                 }}
               >
                 Sign Out
