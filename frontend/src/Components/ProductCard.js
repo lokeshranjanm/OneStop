@@ -9,10 +9,17 @@ const ProductCard = ({ url }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
+        border: "1px solid #E6E6E6",
+        padding: "12px",
       }}
     >
-      {" "}
-      <div style={{ border: "1px solid #E6E6E6", height: 247 }}>
+      <div
+        style={{
+          border: "1px solid #E6E6E6",
+          borderRadius: "8px",
+          height: 250,
+        }}
+      >
         <Link to="">
           <img
             src={url}
@@ -37,7 +44,7 @@ const ProductCard = ({ url }) => {
         Roadster
       </Typography>
       <Typography style={{ fontSize: "14px", color: "grey", marginTop: 6 }}>
-      Half Sleeve Men's T-Shirt
+        Half Sleeve Men's T-Shirt
       </Typography>
       <Typography
         style={{ fontSize: "16px", fontWeight: "bold", marginTop: 10 }}
