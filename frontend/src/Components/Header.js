@@ -19,33 +19,36 @@ const Header = () => {
       </Link>
       <div className="header__nav">
         <div className="header__option">
-          <span
-            className="header__optionLineOne"
-            onClick={() => history.push("/products/clothing")}
-            style={{ pointer: "cursor" }}
-          >
-            CLOTHING
-          </span>
+          <Link to={"/products/clothing"} style={{ textDecoration: "none" }}>
+            <span
+              className="header__optionLineOne"
+              style={{ pointer: "cursor" }}
+            >
+              CLOTHING
+            </span>
+          </Link>
         </div>
 
         <div className="header__option">
-          <span
-            className="header__optionLineThree"
-            onClick={() => history.push("/products/electronics")}
-            style={{ pointer: "cursor" }}
-          >
-            ELECTRONICS
-          </span>
+          <Link to={"/products/electronics"} style={{ textDecoration: "none" }}>
+            <span
+              className="header__optionLineThree"
+              style={{ pointer: "cursor" }}
+            >
+              ELECTRONICS
+            </span>
+          </Link>
         </div>
 
         <div className="header__option">
-          <span
-            className="header__optionLineFour"
-            onClick={() => history.push("/products/sports")}
-            style={{ pointer: "cursor" }}
-          >
-            SPORTS
-          </span>
+          <Link to={"/products/sports"} style={{ textDecoration: "none" }}>
+            <span
+              className="header__optionLineFour"
+              style={{ pointer: "cursor" }}
+            >
+              SPORTS
+            </span>
+          </Link>
         </div>
       </div>
 
