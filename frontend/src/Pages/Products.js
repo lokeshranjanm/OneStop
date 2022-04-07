@@ -20,11 +20,7 @@ const Products = () => {
   const [loader, setLoader] = useState(false);
 
   const categoryId =
-    params.category === "sports"
-      ? 3
-      : params.category === "electronice"
-      ? 2
-      : 1;
+    params.category === "sports" ? 3 : params.category === "clothing" ? 1 : 2;
 
   const handleChange = (e) => {
     setSortBy(e.target.value);
