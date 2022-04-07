@@ -28,7 +28,7 @@ const Products = () => {
 
   useEffect(() => {
     getProductsByCategory();
-  }, []);
+  }, [params]);
 
   const getProductsByCategory = async () => {
     setLoader(true);
