@@ -44,7 +44,7 @@ const Products = () => {
       })
       .then((response) => {
         if (response.status === 200) {
-          setProducts(response.data);
+          setProducts(response.data.products);
           setLoader(false);
         }
       })
