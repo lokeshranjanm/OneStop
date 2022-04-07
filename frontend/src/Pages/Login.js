@@ -88,6 +88,9 @@ const Login = () => {
           if (response.status === 200) {
             window.alert("You are login successfully");
             localStorage.setItem("customer", JSON.stringify(response.data));
+            var a = [];
+            a.push(JSON.parse(localStorage.getItem("cart")));
+            localStorage.setItem("cart", JSON.stringify(a));
             history.push("/");
           } else if (response.status === 500) {
             window.alert("Invaild credentials");

@@ -106,7 +106,14 @@ const Header = () => {
         </div>
 
         <div className="header__option">
-          <Badge badgeContent={0} color="secondary">
+          <Badge
+            badgeContent={
+              JSON.parse(localStorage.getItem("cart"))
+                ? JSON.parse(localStorage.getItem("cart")).length
+                : 0
+            }
+            color="secondary"
+          >
             <LocalMallIcon style={{ color: "black" }} />
           </Badge>
           <span className="header__optionLineTwo">Bag</span>

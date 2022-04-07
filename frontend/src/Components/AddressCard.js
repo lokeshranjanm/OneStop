@@ -46,7 +46,7 @@ const AddressCard = () => {
             Delivery Address
           </Typography>
 
-          {true && (
+          {false && (
             <Button
               size="large"
               style={{ textTransform: "none" }}
@@ -58,7 +58,7 @@ const AddressCard = () => {
             </Button>
           )}
         </div>
-        {true && (
+        {false && (
           <Typography
             style={{
               fontSize: "14px",
@@ -68,7 +68,7 @@ const AddressCard = () => {
             Address not added, Please add your address!
           </Typography>
         )}
-        {false && (
+        {true && (
           <div>
             <Typography
               style={{ fontSize: "15px", fontWeight: 530, marginBottom: 6 }}
