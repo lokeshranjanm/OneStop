@@ -37,7 +37,7 @@ const Products = () => {
   const getProductsByCategory = async () => {
     setLoader(true);
     const response = await axios
-      .get(`http://localhost:7777/product/category/get/${categoryId}`, {
+      .get(`http://localhost:7777/category/get/${categoryId}`, {
         headers: {
           "X-Requested-With": "XMLHttpRequest",
         },
