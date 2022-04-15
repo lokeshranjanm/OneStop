@@ -51,8 +51,9 @@ const Products = () => {
   const handleChange = async (e) => {
     if (e.target.value === "lowtohigh") {
       setSortBy(e.target.value);
-      let res = await sortLowToHigh(products);
-      setProducts1(res);
+      setProducts1(
+        products.sort((a, b) => (a.productPrice > b.productPrice ? 1 : -1))
+      );
     } else if (e.target.value === "hightolow") {
       setSortBy(e.target.value);
       let res = await sortHighToLow(products);
