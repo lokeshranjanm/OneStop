@@ -17,18 +17,11 @@ const Products = () => {
   const params = useParams();
   const [sortby, setSortBy] = useState("recommended");
   const [products, setProducts] = useState([]);
+  const [products1, setProducts1] = useState([]);
   const [loader, setLoader] = useState(false);
 
   const categoryId =
     params.category === "sports" ? 3 : params.category === "clothing" ? 1 : 2;
-
-  const handleChange = async (e) => {
-    if (e.target.value === "lowtohigh") {
-      setSortBy(e.target.value);
-      let res = await sortLowToHigh(products);
-      setProducts(res);
-    }
-  };
 
   useEffect(() => {
     getProductsByCategory();
@@ -45,6 +38,7 @@ const Products = () => {
       .then((response) => {
         if (response.status === 200) {
           setProducts(response.data.products);
+          setProducts1(response.data.products);
           setLoader(false);
         }
       })
@@ -54,6 +48,21 @@ const Products = () => {
       });
   };
 
+  const handleChange = async (e) => {
+    if (e.target.value === "lowtohigh") {
+      setSortBy(e.target.value);
+      let res = await sortLowToHigh(products);
+      setProducts1(res);
+    } else if (e.target.value === "hightolow") {
+      setSortBy(e.target.value);
+      let res = await sortLowToHigh(products);
+      setProducts1(res);
+    } else {
+      setSortBy(e.target.value);
+      setProducts1(products);
+    }
+  };
+
   const sortLowToHigh = async (arr = []) => {
     const sorter = (a, b) => {
       return +a.price - +b.price;
@@ -61,10 +70,17 @@ const Products = () => {
     arr.sort(sorter);
   };
 
+  const sortHighToLow = async (arr = []) => {
+    const sorter = (a, b) => {
+      return +b.price - a.price;
+    };
+    arr.sort(sorter);
+  };
+
   return (
     <>
       <Header />
-      {loader || products.length === 0 ? (
+      {loader || products1.length === 0 ? (
         <div
           style={{
             position: "fixed",
@@ -132,8 +148,8 @@ const Products = () => {
               #{params.category}
             </h3>
             <Grid container spacing={10} style={{ padding: "0px 10px" }}>
-              {products.length !== 0 &&
-                products.map((product, idx) => {
+              {products1.length !== 0 &&
+                products1.map((product, idx) => {
                   return (
                     <Grid item xs={6} sm={4} md={4} lg={3}>
                       <ProductCard product={product} />
