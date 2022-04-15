@@ -22,8 +22,12 @@ const Products = () => {
   const categoryId =
     params.category === "sports" ? 3 : params.category === "clothing" ? 1 : 2;
 
-  const handleChange = (e) => {
-    setSortBy(e.target.value);
+  const handleChange = async (e) => {
+    if (e.target.value === "lowtohigh") {
+      setSortBy(e.target.value);
+      let res = await sortLowToHigh(products);
+      setProducts(res);
+    }
   };
 
   useEffect(() => {
@@ -48,6 +52,13 @@ const Products = () => {
         console.log(error, "api failure");
         setLoader(false);
       });
+  };
+
+  const sortLowToHigh = async (arr = []) => {
+    const sorter = (a, b) => {
+      return +a.price - +b.price;
+    };
+    arr.sort(sorter);
   };
 
   return (
