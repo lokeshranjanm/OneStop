@@ -55,7 +55,7 @@ const Products = () => {
       setProducts1(res);
     } else if (e.target.value === "hightolow") {
       setSortBy(e.target.value);
-      let res = await sortLowToHigh(products);
+      let res = await sortHighToLow(products);
       setProducts1(res);
     } else {
       setSortBy(e.target.value);
@@ -65,14 +65,14 @@ const Products = () => {
 
   const sortLowToHigh = async (arr = []) => {
     const sorter = (a, b) => {
-      return +a.price - +b.price;
+      return +a.productPrice - +b.productPrice;
     };
     arr.sort(sorter);
   };
 
   const sortHighToLow = async (arr = []) => {
     const sorter = (a, b) => {
-      return +b.price - a.price;
+      return +b.productPrice - a.productPrice;
     };
     arr.sort(sorter);
   };
