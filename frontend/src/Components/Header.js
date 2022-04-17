@@ -204,6 +204,7 @@ const Header = () => {
                 className="header__optionLineTwo"
                 onClick={() => {
                   localStorage.removeItem("customer");
+                  localStorage.removeItem("address");
                   history.push("/signin");
                 }}
               >
