@@ -205,6 +205,7 @@ const Header = () => {
                 onClick={() => {
                   localStorage.removeItem("customer");
                   localStorage.removeItem("address");
+                  localStorage.removeItem("cart");
                   history.push("/signin");
                 }}
               >

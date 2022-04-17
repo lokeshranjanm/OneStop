@@ -64,6 +64,7 @@ const AddressCard = () => {
     }
 
     const payload = {
+
       name: formData.name,
       mobile: formData.mobile,
       addressLine1: formData.addressLine1,
@@ -72,6 +73,7 @@ const AddressCard = () => {
       city: formData.city,
       state: formData.state,
     };
+    console.log(payload)
 
     localStorage.setItem("address", JSON.stringify(payload));
     window.alert("Address Saved Successfully");
@@ -97,7 +99,7 @@ const AddressCard = () => {
             Delivery Address
           </Typography>
 
-          {isAddress && (
+          {!isAddress && (
             <Button
               size="large"
               style={{ textTransform: "none" }}
@@ -109,7 +111,7 @@ const AddressCard = () => {
             </Button>
           )}
         </div>
-        {isAddress && (
+        {!isAddress && (
           <Typography
             style={{
               fontSize: "14px",
@@ -209,7 +211,7 @@ const AddressCard = () => {
               id="outlined-required"
               label="Mobile Number"
               name="mobile"
-              style={{ marginTop: 5, width: "100%" }}
+              style={{ marginTop: 30, width: "100%" }}
               value={formData.mobile}
               onChange={handleFormData}
             />
@@ -297,7 +299,7 @@ const AddressCard = () => {
                 style={{ textTransform: "none", width: 130 }}
                 variant="contained"
                 color="primary"
-                onClick={() => handleSubmit()}
+                onClick={ handleSubmit}
               >
                 Save
               </Button>
