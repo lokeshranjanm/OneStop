@@ -17,7 +17,7 @@ const Products = () => {
   const params = useParams();
   const [sortby, setSortBy] = useState("recommended");
   const [products, setProducts] = useState([]);
-  const [products1, setProducts1] = useState([]);
+
   const [loader, setLoader] = useState(false);
 
   const categoryId =
@@ -38,7 +38,6 @@ const Products = () => {
       .then((response) => {
         if (response.status === 200) {
           setProducts(response.data.products);
-          setProducts1(response.data.products);
           setLoader(false);
         }
       })
@@ -51,37 +50,24 @@ const Products = () => {
   const handleChange = async (e) => {
     if (e.target.value === "lowtohigh") {
       setSortBy(e.target.value);
-      setProducts1(
-        products.sort((a, b) => (a.productPrice > b.productPrice ? 1 : -1))
+      setProducts(
+        products?.sort((a, b) => (a.productPrice > b.productPrice ? 1 : -1))
       );
     } else if (e.target.value === "hightolow") {
       setSortBy(e.target.value);
-      let res = await sortHighToLow(products);
-      setProducts1(res);
+      setProducts(
+        products?.sort((a, b) => (a.productPrice > b.productPrice ? -1 : 1))
+      );
     } else {
       setSortBy(e.target.value);
-      setProducts1(products);
+      getProductsByCategory();
     }
-  };
-
-  const sortLowToHigh = async (arr = []) => {
-    const sorter = (a, b) => {
-      return +a.productPrice - +b.productPrice;
-    };
-    arr.sort(sorter);
-  };
-
-  const sortHighToLow = async (arr = []) => {
-    const sorter = (a, b) => {
-      return +b.productPrice - a.productPrice;
-    };
-    arr.sort(sorter);
   };
 
   return (
     <>
       <Header />
-      {loader || products1.length === 0 ? (
+      {loader || products.length === 0 ? (
         <div
           style={{
             position: "fixed",
@@ -133,7 +119,7 @@ const Products = () => {
                     onChange={(e) => handleChange(e)}
                   >
                     <MenuItem value={"recommended"}>Recommended</MenuItem>
-                    <MenuItem value={"lowtogigh"}>Price Low to High</MenuItem>
+                    <MenuItem value={"lowtohigh"}>Price Low to High</MenuItem>
                     <MenuItem value={"hightolow"}>Price High to Low</MenuItem>
                   </Select>
                 </FormControl>
@@ -149,8 +135,8 @@ const Products = () => {
               #{params.category}
             </h3>
             <Grid container spacing={10} style={{ padding: "0px 10px" }}>
-              {products1.length !== 0 &&
-                products1.map((product, idx) => {
+              {products.length !== 0 &&
+                products.map((product, idx) => {
                   return (
                     <Grid item xs={6} sm={4} md={4} lg={3}>
                       <ProductCard product={product} />
