@@ -26,7 +26,7 @@ const ProductDetails = () => {
   useEffect(() => {
     setLoader(true);
     getProduct();
-  }, []);
+  }, [params.productId]);
 
   const getProduct = async () => {
     console.log("basant Janghel");
