@@ -21,13 +21,7 @@ const ProductDetails = () => {
   const [qty, setQty] = useState(0);
 
   const [loader, setLoader] = useState(false);
-  const [product, setProduct] = useState({
-    productId: 5,
-    productName: "T-Shirt",
-    productPrice: 50000,
-    url: "https://res.cloudinary.com/dl1jkiqif/image/upload/v1649010357/jzdkpqn6brnhwttkxjbo_q7dj2h.jpg",
-    productDesc: "Regular Fit Men's Cotton T-Shirt",
-  });
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     setLoader(true);

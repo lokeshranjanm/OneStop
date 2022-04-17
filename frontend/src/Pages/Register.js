@@ -107,7 +107,7 @@ const Register = () => {
     e.preventDefault();
 
     if (
-      formData.name.trim === "" ||
+      formData.name.trim() === "" ||
       formData.email.trim() === "" ||
       formData.password.trim() === "" ||
       formData.confirmPassword.trim() === ""

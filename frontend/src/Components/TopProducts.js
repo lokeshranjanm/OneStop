@@ -29,7 +29,6 @@ const TopProducts = () => {
       })
       .catch((error) => {
         console.log(error, "api failure");
-        setLoader(false);
       });
   };
 
